@@ -28,7 +28,7 @@ export function renderOrder() {
     orderHTML = `
       <div class="no-orders-text">
         No orders yet...
-        <img class="gif" src="../../images/triste.gif">
+        <img class="gif" src="images/triste.gif">
       </div>
     `;
     document.querySelector('.orders-grid').innerHTML = orderHTML;
