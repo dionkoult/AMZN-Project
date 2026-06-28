@@ -76,9 +76,6 @@ export function estimatedDate(estimatedDelTime, date) {
   return current.format('MMMM D');
 }
 
-  return dateFinal;
-}
-
 export function dateNow() {
   const currentDate = dayjs();
 
