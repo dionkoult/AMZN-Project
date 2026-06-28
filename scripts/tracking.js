@@ -62,10 +62,7 @@ function renderTracking() {
   }
 
   const dateFinal = estimatedDate(estimatedDelTime, date);
-  const formattedDate = dayjs(`${dateFinal} ${dayjs().year()}`)
-    .format('dddd, MMMM D');
-
-
+  
   // Progress Bar  
   const orderDate = dayjs(`${date} ${dayjs().year()}`);
   const currentDate = dayjs();
@@ -86,7 +83,7 @@ function renderTracking() {
     </a>
 
     <div class="delivery-date">
-      Arriving on ${formattedDate}
+      Arriving on ${dateFinal}
     </div>
 
     <div class="product-info">
