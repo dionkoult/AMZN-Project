@@ -56,26 +56,25 @@ export function calculateDeliveryDate(deliveryOption, format = 3) {
 }
 
 export function estimatedDate(estimatedDelTime, date) {
-  let i = 1;
-  let dateFinal = '';
-
-  const start = dayjs(date, 'MMMM D').startOf('day');
   const end = dayjs(estimatedDelTime).startOf('day');
+  const start = dayjs(date, 'MMMM D')
+    .year(end.year())
+    .startOf('day');
 
   let days = end.diff(start, 'day');
+  let current = start;
 
   while (days > 0) {
-    const deliveryDate = start.add(i, 'days');
-    const dateDay = deliveryDate.format('dddd');
+    current = current.add(1, 'day');
+    const dateDay = current.format('dddd');
 
-    if (dateDay === 'Saturday' || dateDay === 'Sunday') {
-      days += 1;
+    if (dateDay !== 'Saturday' && dateDay !== 'Sunday') {
+      days -= 1;
     }
-
-    dateFinal = deliveryDate.format('MMMM D');
-    days -= 1;
-    i += 1;
   }
+
+  return current.format('MMMM D');
+}
 
   return dateFinal;
 }
