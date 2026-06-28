@@ -231,3 +231,9 @@
 .quantity-info .message-invalid {
   display: initial;
 }
+
+@media (max-width: 768px) {
+  .message-invalid {
+    margin-top: 25px;
+  }
+}
