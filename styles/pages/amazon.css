@@ -36,7 +36,7 @@
 .banner button {
   margin-top: 40px;
   padding: 17px 35px 17px 35px;
-  font-size: 25px;
+  font-size: 27px;
   border-radius: 10px;
   background-color: rgb(216, 216, 216);
   font-weight: 500;
@@ -89,6 +89,21 @@
 @media (max-width: 800px) {
   .products-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .banner p {
+    font-size: 35px;
+  }
+
+  .banner {
+    font-size: 20px;
+  }
+
+  .banner button {
+    padding: 12px 25px 12px 25px;
+    font-size: 19px;
   }
 }
 
